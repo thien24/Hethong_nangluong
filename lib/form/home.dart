@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'device.dart'; // Import file device.dart
-import 'power.dart';
+import 'device.dart'; 
 import 'smoker.dart';
 import 'gas.dart';
-import 'thongbao.dart'; // Import file thongbao.dart
+import 'thongbao.dart';
+import 'power.dart';
+import 'prenium.dart';
 
 class HomePage extends StatelessWidget {
   
@@ -57,10 +58,10 @@ class HomePage extends StatelessWidget {
                     mainAxisSpacing: 10, // Khoảng cách giữa các hàng
                     childAspectRatio: (screenSize.width / 2) / (screenSize.height / 5), // Tỷ lệ diện tích dựa trên màn hình
                     children: [
-                      _buildCard('Điều khiển thiết bị', Icons.device_hub, context, color: Colors.grey),
-                      _buildCard('Giám sát năng lượng', Icons.battery_charging_full, context, color: Colors.grey),
-                      _buildCard('Cảm biến khói', Icons.smoke_free, context, color: Colors.grey),
-                      _buildCard('Cảm biến khí gas', Icons.gas_meter_outlined, context, color: Colors.grey),
+                      _buildCard('Điều khiển thiết bị', Icons.device_hub, context, color: Colors.white70),
+                      _buildCard('Giám sát năng lượng', Icons.battery_charging_full, context, color: Colors.white70),
+                      _buildCard('Cảm biến khói', Icons.smoke_free, context, color: Colors.white70),
+                      _buildCard('Cảm biến khí gas', Icons.gas_meter_outlined, context, color: Colors.white70),
                     ],
                   ),
                 ),
@@ -97,8 +98,8 @@ class HomePage extends StatelessWidget {
       // Di chuyển đến Trang chủ (nếu cần)
       Navigator.pop(context); // Có thể pop ra nếu đang ở trang này
     } else if (index == 2) {
-      // Thêm logic điều hướng cho Premium (nếu có trang Premium)
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => PremiumPage()));
+      
+      Navigator.push(context, MaterialPageRoute(builder: (context) => PremiumPage()));
     }
   },
 ),
