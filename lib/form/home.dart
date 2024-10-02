@@ -35,19 +35,20 @@ class HomePage extends StatelessWidget {
               // Tiêu đề
               AppBar(
                 title: Text('Home Control System'),
-                backgroundColor: Colors.transparent, // Để tiêu đề trong suốt
+                backgroundColor: Colors.white, // Để tiêu đề trong suốt
                 elevation: 0, // Không có bóng
               ),
               // Phần thêm ảnh
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.network(
-                  'https://lumi.vn/wp-content/uploads/2023/11/nha-thong-minh-smarthome-la-gi-768x576.webp', // Đường dẫn đến ảnh trong dự án của bạn
-                  height: screenSize.height * 0.25, // Điều chỉnh chiều cao của ảnh (25% chiều cao màn hình)
-                  width: screenSize.width, // Chiều rộng bằng màn hình
-                  fit: BoxFit.cover, // Đảm bảo ảnh bao phủ toàn bộ khung hình
-                ),
-              ),
+            // Phần thêm ảnh
+Container(
+  width: screenSize.width, // Chiều rộng bằng toàn bộ màn hình
+  height: screenSize.height * 0.35, // Điều chỉnh chiều cao của ảnh (50% chiều cao màn hình)
+  child: Image.network(
+    'https://lumi.vn/wp-content/uploads/2023/11/nha-thong-minh-smarthome-la-gi-768x576.webp',
+    fit: BoxFit.cover, // Đảm bảo ảnh bao phủ toàn bộ khung hình
+  ),
+),
+
               // Phần GridView chứa các thẻ
               Expanded(
                 child: Padding(
@@ -58,10 +59,10 @@ class HomePage extends StatelessWidget {
                     mainAxisSpacing: 10, // Khoảng cách giữa các hàng
                     childAspectRatio: (screenSize.width / 2) / (screenSize.height / 5), // Tỷ lệ diện tích dựa trên màn hình
                     children: [
-                      _buildCard('Điều khiển thiết bị', Icons.device_hub, context, color: Colors.white70),
-                      _buildCard('Giám sát năng lượng', Icons.battery_charging_full, context, color: Colors.white70),
-                      _buildCard('Cảm biến khói', Icons.smoke_free, context, color: Colors.white70),
-                      _buildCard('Cảm biến khí gas', Icons.gas_meter_outlined, context, color: Colors.white70),
+                      _buildCard('Điều khiển thiết bị', Icons.device_hub, context, color: Colors.white),
+                      _buildCard('Giám sát năng lượng', Icons.battery_charging_full, context, color: Colors.white),
+                      _buildCard('Cảm biến khói', Icons.smoke_free, context, color: Colors.white),
+                      _buildCard('Cảm biến khí gas', Icons.gas_meter_outlined, context, color: Colors.white),
                     ],
                   ),
                 ),
@@ -71,7 +72,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
      bottomNavigationBar: BottomNavigationBar(
-  backgroundColor: Colors.grey, // Đặt màu nền thành xám
+  backgroundColor: Colors.white, // Đặt màu nền thành xám
   items: [
     BottomNavigationBarItem(
       icon: Icon(Icons.notifications),
@@ -107,7 +108,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(String title, IconData icon, BuildContext context, {Color color = Colors.grey}) {
+  Widget _buildCard(String title, IconData icon, BuildContext context, {Color color = Colors.white}) {
     return Card(
       color: color, // Thay đổi màu sắc thẻ
       elevation: 4,
