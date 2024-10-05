@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "798641031885",
+    "project_id": "hocflutter2024-80ea4",
+    "storage_bucket": "hocflutter2024-80ea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798641031885:android:0b7ec4f184b8263f293784",
+        "android_client_info": {
+          "package_name": "com.example.smarthome"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh-o3QNddYKc313i6LOdlw5Zbu0Ntc3dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

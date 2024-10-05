@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'form/home.dart'; // Import màn hình HomePage
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -28,7 +34,8 @@ class SignInScreen extends StatelessWidget {
               height: 190,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/signin.png'), // Đặt ảnh của bạn vào đây
+                  image: AssetImage(
+                      'assets/signin.png'), // Đặt ảnh của bạn vào đây
                   fit: BoxFit.cover,
                 ),
               ),
@@ -58,7 +65,9 @@ class SignInScreen extends StatelessWidget {
                       hintStyle: TextStyle(color: Colors.white),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.white), // Thay đổi màu border thành trắng
+                        borderSide: BorderSide(
+                            color: Colors
+                                .white), // Thay đổi màu border thành trắng
                       ),
                     ),
                     style: TextStyle(color: Colors.white),
@@ -74,7 +83,9 @@ class SignInScreen extends StatelessWidget {
                       hintStyle: TextStyle(color: Colors.white),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.white), // Thay đổi màu border thành trắng
+                        borderSide: BorderSide(
+                            color: Colors
+                                .white), // Thay đổi màu border thành trắng
                       ),
                     ),
                     style: TextStyle(color: Colors.white),
@@ -104,8 +115,10 @@ class SignInScreen extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 21, 66, 103), // Màu nền của nút
-                      minimumSize: Size(double.infinity, 50), // Nút full chiều rộng
+                      backgroundColor: const Color.fromARGB(
+                          255, 21, 66, 103), // Màu nền của nút
+                      minimumSize:
+                          Size(double.infinity, 50), // Nút full chiều rộng
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -129,7 +142,7 @@ class SignInScreen extends StatelessWidget {
                     icon: Icon(Icons.apple),
                     label: Text('Đăng nhập với Apple'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(255, 182, 53, 53), 
+                      foregroundColor: const Color.fromARGB(255, 182, 53, 53),
                       backgroundColor: Colors.white,
                       minimumSize: Size(double.infinity, 50),
                       shape: RoundedRectangleBorder(
@@ -146,7 +159,7 @@ class SignInScreen extends StatelessWidget {
                     icon: Icon(Icons.g_mobiledata),
                     label: Text('Đăng nhập với Google'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black, 
+                      foregroundColor: Colors.black,
                       backgroundColor: Colors.white,
                       minimumSize: Size(double.infinity, 50),
                       shape: RoundedRectangleBorder(
